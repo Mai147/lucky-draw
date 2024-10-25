@@ -17,8 +17,8 @@ const NumberBox: React.FC<NumberBoxProps> = ({ value }) => {
             }}
         >
             <div className="bg-[#FDDEE4] rounded-xl p-1 shadow-sm flex">
-                {numberArray.map((val) => (
-                    <NumberBoxItem value={val} />
+                {numberArray.map((val, index) => (
+                    <NumberBoxItem key={`${val}${index}`} value={val} />
                 ))}
             </div>
         </div>
