@@ -18,3 +18,29 @@ export const isValidInteger = ({
 export const splitNumber = (num: number) => {
     return num.toString().split("").map(Number);
 };
+
+type NestedObject = {
+    [key: string]: NestedObject | string;
+};
+
+export const flattenObject = (
+    obj: NestedObject,
+    prefix: string = ""
+): { [key: string]: string } => {
+    const flattened: { [key: string]: string } = {};
+
+    for (const key in obj) {
+        const newKey = prefix ? `${prefix}-${key}` : key;
+
+        if (typeof obj[key] === "object" && obj[key] !== null) {
+            Object.assign(
+                flattened,
+                flattenObject(obj[key] as NestedObject, newKey)
+            );
+        } else {
+            flattened[newKey] = obj[key] as string;
+        }
+    }
+
+    return flattened;
+};

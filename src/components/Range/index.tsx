@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "../Input";
+import { useTheme } from "../../contexts/ThemeContext";
 
 type RangeProps = {
     minValue: number;
@@ -14,16 +15,21 @@ const Range: React.FC<RangeProps> = ({
     handleMinValueChange,
     handleMaxValueChange,
 }) => {
+    const { styles, theme } = useTheme();
     return (
         <div className="flex flex-col sm:flex-row justify-center w-full">
             <div className="flex flex-col items-start mx-2 sm:mx-4 my-2 sm:my-0">
-                <span className="font-['Exo',serif] font-semibold text-gray-700 text-xl">
+                <span
+                    className={`font-['Exo',serif] font-semibold ${styles[theme].textColor} text-xl`}
+                >
                     Min:
                 </span>
                 <Input value={minValue} onChange={handleMinValueChange} />
             </div>
             <div className="flex flex-col items-start mx-2 sm:mx-4 my-2 sm:my-0 text-xl">
-                <span className="font-['Exo',serif] font-semibold text-gray-700">
+                <span
+                    className={`font-['Exo',serif] font-semibold ${styles[theme].textColor} text-xl`}
+                >
                     Max:
                 </span>
                 <Input value={maxValue} onChange={handleMaxValueChange} />

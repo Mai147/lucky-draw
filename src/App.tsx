@@ -7,7 +7,7 @@ import ConfettiExplosion from "react-confetti-explosion";
 import AnimationBox from "./components/AnimationBox";
 import CountDownText from "./components/CountDownText";
 import RefreshButton from "./components/RefreshButton";
-
+import ThemeModal from "./components/Modal/ThemeModal";
 function App() {
     const [num, setNum] = useState(0);
     const [disabled, setDisabled] = useState(false);
@@ -17,13 +17,17 @@ function App() {
     const [maxValue, setMaxValue] = useState(115);
     const startAudioRef = useRef<HTMLAudioElement>(null);
     const endAudioRef = useRef<HTMLAudioElement>(null);
+    const [isOpenThemeModal, setIsOpenThemeModal] = useState<boolean>(false);
     const randomRange = (min: number, max: number) => {
         return Math.floor(Math.random() * (max - min) + min);
     };
     const handleClick = () => {
         if (startAudioRef.current) {
             startAudioRef.current.currentTime = 0;
-            startAudioRef.current.play();
+            startAudioRef.current
+                .play()
+                .then(() => {})
+                .catch((err: any) => console.log(err));
         }
         setDisplay(false);
         const randomNumber = randomRange(minValue, maxValue);
@@ -59,7 +63,10 @@ function App() {
             setTimeout(() => {
                 if (endAudioRef.current) {
                     endAudioRef.current.currentTime = 0;
-                    endAudioRef.current.play();
+                    endAudioRef.current
+                        .play()
+                        .then(() => {})
+                        .catch((err) => console.log(err));
                 }
                 setDisplay(true);
             }, 3100);
@@ -79,38 +86,51 @@ function App() {
     }, [seconds]);
 
     return (
-        <div className="flex flex-col justify-center items-center w-[100vw] h-[100vh] bg-gradient-to-br from-[#FECED7] to-[#FFEFF2] p-2 sm:p-4">
-            <Header />
+        <>
+            <ThemeModal
+                isOpen={isOpenThemeModal}
+                onClose={() => setIsOpenThemeModal(false)}
+            />
+            <Header openThemeModal={() => setIsOpenThemeModal(true)} />
             <Range
                 minValue={minValue}
                 maxValue={maxValue}
                 handleMinValueChange={handleMinValueChange}
                 handleMaxValueChange={handleMaxValueChange}
             />
-            <audio ref={startAudioRef} src="audio/sound1.mp3" />
-            <audio ref={endAudioRef} src="audio/sound2.mp3" />
-            <div className="flex-1 flex flex-col justify-center items-center">
-                {!disabled && (
-                    <ConfettiExplosion
-                        particleCount={200}
-                        duration={2800}
-                        colors={[
-                            "#EFE6FB",
-                            "#FBCFE0",
-                            "#FDEF81",
-                            "#B6E2FD",
-                            "#ADD6AE",
-                        ]}
-                    />
-                )}
-                <div className="h-[180px] sm:h-[200px] flex flex-col justify-center items-center mb-6 sm:mb-8">
-                    {display && disabled && <AnimationBox value={num} />}
-                    {!disabled && <NumberBox value={num} />}
-                    {seconds != null && <CountDownText seconds={seconds} />}
+            <audio
+                ref={startAudioRef}
+                src={`${process.env.PUBLIC_URL}/audio/sound1.mp3`}
+            ></audio>
+            <audio
+                ref={endAudioRef}
+                src={`${process.env.PUBLIC_URL}/audio/sound2.mp3`}
+            />
+            <div className="flex-1 flex flex-col justify-center items-center w-full">
+                <div className="flex flex-col justify-center items-center flex-1">
+                    {!disabled && (
+                        <ConfettiExplosion
+                            particleCount={200}
+                            duration={2800}
+                            colors={[
+                                "#EFE6FB",
+                                "#FBCFE0",
+                                "#FDEF81",
+                                "#B6E2FD",
+                                "#ADD6AE",
+                            ]}
+                        />
+                    )}
+                    <div className="h-[180px] sm:h-[200px] flex flex-col justify-center items-center mb-6 sm:mb-8">
+                        {display && disabled && <AnimationBox value={num} />}
+                        {/* {<AnimationBox value={num} />} */}
+                        {!disabled && <NumberBox value={num} />}
+                        {seconds != null && <CountDownText seconds={seconds} />}
+                    </div>
                 </div>
                 <RefreshButton disabled={disabled} handleClick={handleClick} />
             </div>
-        </div>
+        </>
     );
 }
 

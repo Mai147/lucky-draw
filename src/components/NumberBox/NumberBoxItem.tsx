@@ -1,15 +1,17 @@
 import React from "react";
+import { useTheme } from "../../contexts/ThemeContext";
 
 type NumberBoxItemProps = {
     value: number;
 };
 
 const NumberBoxItem: React.FC<NumberBoxItemProps> = ({ value }) => {
+    const { styles, theme } = useTheme();
     return (
         <div
-            className="pl-[48px] pr-[48px] pt-[14px] pb-[14px] border-[0.25rem] border-[#FDDEE4] font-['Spicy_Rice',serif] text-[58px] sm:text-[80px] text-[#D2B5D3] rounded-[16px] bg-white"
+            className={`pl-[48px] pr-[48px] pt-[14px] pb-[14px] border-[0.25rem] ${styles[theme].numberBoxInnerBorder} font-['Spicy_Rice',serif] text-[58px] sm:text-[80px] ${styles[theme].numberBoxColor} rounded-[16px] ${styles[theme].numberBoxBackground}`}
             style={{
-                textShadow: "2px 4px 3px rgba(170, 125, 135, 1)",
+                textShadow: styles[theme].numberBoxTextShadow,
             }}
         >
             <span className="inline-block w-[35.475px] sm:w-[48.95px]">

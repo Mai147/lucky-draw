@@ -1,6 +1,7 @@
 import React from "react";
 import NumberBoxItem from "./NumberBoxItem";
 import { splitNumber } from "../../util/StringUtil";
+import { useTheme } from "../../contexts/ThemeContext";
 
 type NumberBoxProps = {
     value: number;
@@ -8,15 +9,17 @@ type NumberBoxProps = {
 
 const NumberBox: React.FC<NumberBoxProps> = ({ value }) => {
     const numberArray = splitNumber(value);
+    const { styles, theme } = useTheme();
     return (
         <div
-            className="rounded-xl border-[0.5rem] border-white bg-white"
+            className={`rounded-xl border-[0.5rem] ${styles[theme].numberBoxOutterBackground} ${styles[theme].numberBoxOutterBorder}`}
             style={{
-                boxShadow:
-                    "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
+                boxShadow: styles[theme].numberBoxShadow,
             }}
         >
-            <div className="bg-[#FDDEE4] rounded-xl p-1 shadow-sm flex">
+            <div
+                className={`${styles[theme].numberBoxInnerBackground} rounded-xl p-1 shadow-sm flex`}
+            >
                 {numberArray.map((val, index) => (
                     <NumberBoxItem key={`${val}${index}`} value={val} />
                 ))}
