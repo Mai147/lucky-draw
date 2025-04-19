@@ -14,7 +14,7 @@ function App() {
     const [display, setDisplay] = useState(false);
     const [seconds, setSeconds] = useState<number | null>(null);
     const [minValue, setMinValue] = useState(1);
-    const [maxValue, setMaxValue] = useState(122);
+    const [maxValue, setMaxValue] = useState(173);
     const startAudioRef = useRef<HTMLAudioElement>(null);
     const endAudioRef = useRef<HTMLAudioElement>(null);
     const [isOpenThemeModal, setIsOpenThemeModal] = useState<boolean>(false);
