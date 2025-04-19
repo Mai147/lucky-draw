@@ -23,6 +23,12 @@ const ThemeModal: React.FC<ThemeModalProps> = ({ onClose, isOpen }) => {
                     name="Halloween"
                     handleClose={onClose}
                 />
+                <div className="w-full bg-gray-300 h-[1px]"></div>
+                <ThemeItem
+                    thm={ThemeName.CHESSMAZE}
+                    name="ChessMaze"
+                    handleClose={onClose}
+                />
             </div>
         </Modal>
     );

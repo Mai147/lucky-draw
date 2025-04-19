@@ -4,6 +4,7 @@ import { themeStyles, ThemeStyles } from "../constants/Theme/Theme";
 export enum ThemeName {
     PINK = "pink",
     HALLOWEEN = "halloween",
+    CHESSMAZE = "chessmaze",
 }
 
 type ContextState = {
@@ -13,7 +14,7 @@ type ContextState = {
 };
 
 const defaultContextState: ContextState = {
-    theme: ThemeName.HALLOWEEN,
+    theme: ThemeName.CHESSMAZE,
     styles: themeStyles,
     toggleTheme(theme) {},
 };
@@ -21,11 +22,11 @@ const defaultContextState: ContextState = {
 const ThemeContext = createContext<ContextState>(defaultContextState);
 
 export const ThemeProvider = ({ children }: any) => {
-    const [theme, setTheme] = useState<ThemeName>(ThemeName.HALLOWEEN);
+    const [theme, setTheme] = useState<ThemeName>(ThemeName.CHESSMAZE);
 
     useEffect(() => {
         const savedTheme: ThemeName = (localStorage.getItem("theme") ||
-            ThemeName.HALLOWEEN) as ThemeName;
+            ThemeName.CHESSMAZE) as ThemeName;
         setTheme(savedTheme);
     }, []);
 

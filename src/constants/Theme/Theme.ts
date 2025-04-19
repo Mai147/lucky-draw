@@ -1,3 +1,4 @@
+import { chessmazeThemeStylesObject } from "./ChessmazeTheme";
 import { halloweenThemeStylesObject } from "./HalloweenTheme";
 import { pinkThemeStylesObject } from "./PinkTheme";
 
@@ -27,9 +28,11 @@ export type ThemeStylesObject = {
 export type ThemeStyles = {
     pink: ThemeStylesObject;
     halloween: ThemeStylesObject;
+    chessmaze: ThemeStylesObject;
 };
 
 export const themeStyles: ThemeStyles = {
     pink: pinkThemeStylesObject,
     halloween: halloweenThemeStylesObject,
+    chessmaze: chessmazeThemeStylesObject,
 };

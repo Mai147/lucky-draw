@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ openThemeModal }) => {
                         textShadow: styles[theme].headerTextShadowColor,
                     }}
                 >
-                    CHIẾC ĐÈN ĐỊNH MỆNH
+                    THANH GƯƠM ĐỊNH MỆNH
                 </span>
             </div>
         </div>

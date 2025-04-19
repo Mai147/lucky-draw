@@ -8,6 +8,8 @@ module.exports = {
                     "linear-gradient(to bottom right, var(--color-bg-from-pink), var(--color-bg-to-pink))",
                 "skin-halloween":
                     "linear-gradient(to bottom right, var(--color-bg-from-halloween), var(--color-bg-to-halloween)), url('../public/images/7410.jpg')",
+                "skin-chessmaze":
+                    "linear-gradient(to bottom right, var(--color-bg-from-chessmaze), var(--color-bg-to-chessmaze)), url('../public/images/chessmaze.jpg')",
             },
             backgroundColor: {
                 "input-pink": "var(--color-input-background-pink)",
@@ -26,6 +28,13 @@ module.exports = {
                 "button-halloween": "var(--color-button-background-halloween)",
                 "button-hover-halloween":
                     "var(--color-button-background-hover-halloween)",
+                "input-chessmaze": "var(--color-input-background-chessmaze)",
+                "box-chessmaze": "var(--color-box-bg-chessmaze)",
+                "box-inner-chessmaze": "var(--color-box-border-inner-chessmaze)",
+                "box-outter-chessmaze": "var(--color-box-border-outter-chessmaze)",
+                "button-hover-chessmaze":
+                    "var(--color-button-background-hover-chessmaze)",
+                "button-chessmaze": "var(--color-button-background-chessmaze)",
             },
             textColor: {
                 "header-icon-pink": "var(--color-header-icon-pink)",
@@ -38,6 +47,11 @@ module.exports = {
                 "skin-halloween": "var(--color-text-halloween)",
                 "input-halloween": "var(--color-input-text-halloween)",
                 "box-halloween": "var(--color-box-text-halloween)",
+                "header-icon-chessmaze": "var(--color-header-icon-chessmaze)",
+                "header-chessmaze": "var(--color-header-text-chessmaze)",
+                "skin-chessmaze": "var(--color-text-chessmaze)",
+                "input-chessmaze": "var(--color-input-text-chessmaze)",
+                "box-chessmaze": "var(--color-box-text-chessmaze)",
             },
             borderColor: {
                 "input-pink": "var(--color-input-border-pink)",
@@ -48,6 +62,9 @@ module.exports = {
                     "var(--color-box-border-inner-halloween)",
                 "box-outter-halloween":
                     "var(--color-box-border-outter-halloween)",
+                "input-chessmaze": "var(--color-input-border-chessmaze)",
+                "box-inner-chessmaze": "var(--color-box-border-inner-chessmaze)",
+                "box-outter-chessmaze": "var(--color-box-border-outter-chessmaze)",
             },
         },
     },
