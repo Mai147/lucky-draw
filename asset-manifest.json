@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/lucky-draw/static/css/main.5fce2cd1.css",
-    "main.js": "/lucky-draw/static/js/main.9be427d9.js",
+    "main.js": "/lucky-draw/static/js/main.84eaa920.js",
     "static/js/453.559f1d3d.chunk.js": "/lucky-draw/static/js/453.559f1d3d.chunk.js",
     "static/media/chessmaze.jpg": "/lucky-draw/static/media/chessmaze.dc433bdb288902a9d8f5.jpg",
     "static/media/7410.jpg": "/lucky-draw/static/media/7410.59a3b7e4e21911cd0acc.jpg",
     "index.html": "/lucky-draw/index.html",
     "main.5fce2cd1.css.map": "/lucky-draw/static/css/main.5fce2cd1.css.map",
-    "main.9be427d9.js.map": "/lucky-draw/static/js/main.9be427d9.js.map",
+    "main.84eaa920.js.map": "/lucky-draw/static/js/main.84eaa920.js.map",
     "453.559f1d3d.chunk.js.map": "/lucky-draw/static/js/453.559f1d3d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5fce2cd1.css",
-    "static/js/main.9be427d9.js"
+    "static/js/main.84eaa920.js"
   ]
 }
