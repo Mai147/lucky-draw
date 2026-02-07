@@ -1,8 +1,10 @@
 import { chessmazeThemeStylesObject } from "./ChessmazeTheme";
 import { halloweenThemeStylesObject } from "./HalloweenTheme";
 import { pinkThemeStylesObject } from "./PinkTheme";
+import { tetThemeStylesObject } from "./TetTheme";
 
 export type ThemeStylesObject = {
+    appHeader?: string;
     background: string;
     textColor: string;
     headerIconColor: string;
@@ -29,10 +31,19 @@ export type ThemeStyles = {
     pink: ThemeStylesObject;
     halloween: ThemeStylesObject;
     chessmaze: ThemeStylesObject;
+    tet: ThemeStylesObject;
 };
+
+export enum ThemeName {
+    PINK = "pink",
+    HALLOWEEN = "halloween",
+    CHESSMAZE = "chessmaze",
+    TET = "tet"
+}
 
 export const themeStyles: ThemeStyles = {
     pink: pinkThemeStylesObject,
     halloween: halloweenThemeStylesObject,
     chessmaze: chessmazeThemeStylesObject,
+    tet: tetThemeStylesObject
 };

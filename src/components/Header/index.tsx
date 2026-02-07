@@ -1,6 +1,7 @@
 import React from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 import { MdOutlineDarkMode } from "react-icons/md";
+import AppConfig from "../../config";
 
 type HeaderProps = {
     openThemeModal: () => void;
@@ -27,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ openThemeModal }) => {
                         textShadow: styles[theme].headerTextShadowColor,
                     }}
                 >
-                    THANH GƯƠM ĐỊNH MỆNH
+                    {styles[theme].appHeader || AppConfig.DEFAULT_APP_HEADER}
                 </span>
             </div>
         </div>

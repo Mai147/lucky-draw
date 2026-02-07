@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "..";
 import ThemeItem from "./ThemeItem";
-import { ThemeName } from "../../../contexts/ThemeContext";
+import { ThemeName } from "../../../constants/Theme/Theme";
 
 type ThemeModalProps = {
     isOpen: boolean;
@@ -27,6 +27,12 @@ const ThemeModal: React.FC<ThemeModalProps> = ({ onClose, isOpen }) => {
                 <ThemeItem
                     thm={ThemeName.CHESSMAZE}
                     name="ChessMaze"
+                    handleClose={onClose}
+                />
+                <div className="w-full bg-gray-300 h-[1px]"></div>
+                <ThemeItem
+                    thm={ThemeName.TET}
+                    name="Tết 2026"
                     handleClose={onClose}
                 />
             </div>

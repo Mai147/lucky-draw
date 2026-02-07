@@ -8,13 +8,14 @@ import AnimationBox from "./components/AnimationBox";
 import CountDownText from "./components/CountDownText";
 import RefreshButton from "./components/RefreshButton";
 import ThemeModal from "./components/Modal/ThemeModal";
+import AppConfig from "./config";
 function App() {
     const [num, setNum] = useState(0);
     const [disabled, setDisabled] = useState(false);
     const [display, setDisplay] = useState(false);
     const [seconds, setSeconds] = useState<number | null>(null);
     const [minValue, setMinValue] = useState(1);
-    const [maxValue, setMaxValue] = useState(173);
+    const [maxValue, setMaxValue] = useState(AppConfig.DEFAULT_MAX_VALUE);
     const startAudioRef = useRef<HTMLAudioElement>(null);
     const endAudioRef = useRef<HTMLAudioElement>(null);
     const [isOpenThemeModal, setIsOpenThemeModal] = useState<boolean>(false);

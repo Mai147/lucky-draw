@@ -1,7 +1,8 @@
 import React from "react";
-import { ThemeName, useTheme } from "../../../contexts/ThemeContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 import { FaCheck } from "react-icons/fa";
 import NumberBoxThumberNail from "../../NumberBox/NumberBoxThumberNail";
+import { ThemeName } from "../../../constants/Theme/Theme";
 
 type ThemeItemProps = { thm: ThemeName; name: string; handleClose: () => void };
 

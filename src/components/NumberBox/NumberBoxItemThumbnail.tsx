@@ -1,5 +1,6 @@
 import React from "react";
-import { ThemeName, useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
+import { ThemeName } from "../../constants/Theme/Theme";
 
 type NumberBoxItemThumbnailProps = {
     value: number;

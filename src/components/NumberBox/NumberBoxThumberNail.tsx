@@ -1,7 +1,8 @@
 import React from "react";
 import { splitNumber } from "../../util/StringUtil";
-import { ThemeName, useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import NumberBoxItemThumbnail from "./NumberBoxItemThumbnail";
+import { ThemeName } from "../../constants/Theme/Theme";
 
 type NumberBoxThumberNailProps = {
     value: number;

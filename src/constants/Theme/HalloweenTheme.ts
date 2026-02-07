@@ -1,6 +1,7 @@
 import { ThemeStylesObject } from "./Theme";
 
 export const halloweenThemeStylesObject: ThemeStylesObject = {
+    appHeader: "CHIẾC ĐÈN DIỆU KỲ",
     background: "bg-skin-halloween",
     textColor: "text-skin-halloween",
     headerColor: "text-header-halloween",

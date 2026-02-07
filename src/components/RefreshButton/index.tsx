@@ -17,7 +17,7 @@ const RefreshButton: React.FC<RefreshButtonProps> = ({
                 disabled ? "bg-gray-400" : styles[theme].buttonBackground
             } ${
                 disabled ? "" : styles[theme].buttonBackgroundHover
-            } transition-all px-8 py-2 rounded-sm text-white shadow-md font-["Exo",serif] w-full sm:w-[180px]`}
+            } transition-all px-8 py-2 rounded-sm text-white shadow-md font-["Exo",serif] font-bold w-full sm:w-[180px]`}
             onClick={handleClick}
             disabled={disabled}
         >

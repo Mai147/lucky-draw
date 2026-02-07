@@ -1,6 +1,7 @@
 import { ThemeStylesObject } from "./Theme";
 
 export const chessmazeThemeStylesObject: ThemeStylesObject = {
+    appHeader: "THANH GƯƠM ĐỊNH MỆNH",
     background: "bg-skin-chessmaze",
     textColor: "text-skin-chessmaze",
     headerColor: "text-header-chessmaze",

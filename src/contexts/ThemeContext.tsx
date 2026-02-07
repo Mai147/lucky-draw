@@ -1,11 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { themeStyles, ThemeStyles } from "../constants/Theme/Theme";
-
-export enum ThemeName {
-    PINK = "pink",
-    HALLOWEEN = "halloween",
-    CHESSMAZE = "chessmaze",
-}
+import { ThemeName, themeStyles, ThemeStyles } from "../constants/Theme/Theme";
+import AppConfig from "../config";
 
 type ContextState = {
     theme: ThemeName;
@@ -14,7 +9,7 @@ type ContextState = {
 };
 
 const defaultContextState: ContextState = {
-    theme: ThemeName.CHESSMAZE,
+    theme: AppConfig.DEFAULT_THEME,
     styles: themeStyles,
     toggleTheme(theme) {},
 };
@@ -22,17 +17,22 @@ const defaultContextState: ContextState = {
 const ThemeContext = createContext<ContextState>(defaultContextState);
 
 export const ThemeProvider = ({ children }: any) => {
-    const [theme, setTheme] = useState<ThemeName>(ThemeName.CHESSMAZE);
+    const [theme, setTheme] = useState<ThemeName>(AppConfig.DEFAULT_THEME);
 
     useEffect(() => {
-        const savedTheme: ThemeName = (localStorage.getItem("theme") ||
-            ThemeName.CHESSMAZE) as ThemeName;
+        // TODO: Reset localstorage to apply default theme
+        localStorage.removeItem("theme");
+        // TODO: Temporary comment
+        // const savedTheme: ThemeName = (localStorage.getItem("theme") ||
+        //     AppConfig.DEFAULT_THEME) as ThemeName;
+        const savedTheme: ThemeName = AppConfig.DEFAULT_THEME as ThemeName;
         setTheme(savedTheme);
     }, []);
 
     const toggleTheme = (theme: ThemeName) => {
         setTheme(theme);
-        localStorage.setItem("theme", theme.toString());
+        // TODO: Temporary comment
+        // localStorage.setItem("theme", theme.toString());
     };
 
     return (

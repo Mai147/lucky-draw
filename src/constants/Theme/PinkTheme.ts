@@ -1,6 +1,7 @@
 import { ThemeStylesObject } from "./Theme";
 
 export const pinkThemeStylesObject: ThemeStylesObject = {
+    appHeader: "VÒNG QUAY MAY MẮN",
     background: "bg-skin-pink",
     textColor: "text-skin-pink",
     headerIconColor: "text-header-icon-pink",
